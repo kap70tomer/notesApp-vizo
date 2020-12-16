@@ -5,13 +5,12 @@ import { AdminComponent } from './components/Admin/admin.component';
 import { LoginComponent } from './components/Login/login.component';
 import { NoteComponent } from './components/Note/note.component';
 import { LoginGuard } from './guards/loginGuard';
-import { AdminGuard } from './guards/AdminGuard';
 
 const routes: Routes = [
 
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", canActivate: [LoginGuard], component: HomeComponent },
-  { path: "admin",  canActivate: [AdminGuard], component: AdminComponent },
+  { path: "admin",  canActivate: [LoginGuard], component: AdminComponent },
   { path: "login", component: LoginComponent },
   { path: "note/:id", component: NoteComponent },
 ]

@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   async signInAnon(){
    //guest Login
       await this.firebaseService.signInAnonymously()
-      .then(res => {
+      .then(res =>{
           this.router.navigate(['/home']);
       })
       .catch(err=>{
@@ -42,11 +42,16 @@ export class LoginComponent implements OnInit {
 
   async loginWithPassport(){
   //send values taken from ui inputs to fb service for http request handling. 
-    await this.firebaseService.signInWithEmailPassword(this.email.value, this.password.value)
-    .then(res =>{
-      this.router.navigate(['/admin']);
-    })
-    .catch(err => console.error(err)
-    );
+      try{
+        await this.firebaseService.signInWithEmailPassword(this.email.value, this.password.value)
+          .then(res =>{
+            console.log(res);
+            
+            this.router.navigate(['/admin']);
+          })
+      } 
+      catch(error){
+          console.log(error);
+      };     
   };
 };

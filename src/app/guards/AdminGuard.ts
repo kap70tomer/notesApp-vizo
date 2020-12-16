@@ -8,15 +8,21 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class AdminGuard implements CanActivate {
   
+  private isME:string|undefined;
 
-  public constructor(private router: Router, public firebaseService:FirebaseService) {}
-
+  public constructor(private router: Router, public firebaseService:FirebaseService){
+    this.isME = "";
+    }
     public canActivate(): boolean {
-        let isAdminEmail = this.firebaseService.firebaseAuth.currentUser;
-        console.log(isAdminEmail);
-            if(isAdminEmail !== null){
+        let isAdminEmail = this.firebaseService.firebaseAuth.user;
+        isAdminEmail.subscribe(a=> {
+            console.log(a?.uid);
+            this.isME = a?.uid
+        })
+            if (this.isME == "f7ZiU0lm7ralGicOKrPZlTDU5Bm1"){
                 return true;
             };
+            this.router.navigateByUrl('/login');
         return false;
     };
 };    

@@ -40,10 +40,14 @@ export class HomeComponent implements OnInit {
       err=>console.error(err))
     });
   };
+  
   async onDeleteClicked(clickedNote:Note){
     return this.notesService.delete(clickedNote.id);
   }
 
+  async createNote(){
+    return this.notesService.createNote(this.currentNote)
+  }
   async onUpdateClicked(clickedNote: Note){
     return this.notesService.updateNote(clickedNote);
   }
