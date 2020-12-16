@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Note } from 'src/app/models/Note';
-import { FirebaseService } from 'src/app/services/firebase.service';
 import { NotesService } from 'src/app/services/notes.service';
 
 
@@ -17,7 +15,9 @@ export class HomeComponent implements OnInit {
     this.notes = [];
   }
    ngOnInit(): void {
-    this.notesService.getMyNotes().then()
+   let ob = this.notesService.getMyNotes();
+   ob.then(res => console.log('please be my notes: '+res),
+   err=>console.error(err));
   };
 };
 
