@@ -1,0 +1,26 @@
+<div>
+    <h2>Welcome Guest!</h2>
+
+    <input type="button" value="Login Anonymously" (click)="signInAnon()">
+
+    <div class="container">
+  
+        <form [formGroup]="loginForm" (submit)="loginWithPassport()">
+        
+            <input type="text" placeholder="Email" [formControl]="email">
+            <span><mat-icon>email</mat-icon></span>
+            <br>
+            <span *ngIf="email.errors?.required && email.touched"> Email is required!</span>
+            <span *ngIf="email.errors?.pattern && email.touched">invalid Email!</span>
+            <br>
+            <input type="password" placeholder="Password" name="password" [formControl]="password">
+            <span><mat-icon>lock</mat-icon></span>
+            <br>
+            <span *ngIf="password.invalid && password.touched">Missing password!</span>       
+            <br>
+    
+            <input [disabled]="loginForm.invalid" type="submit" id="loginButton" value="Login">
+       
+        </form>
+    </div>
+</div>

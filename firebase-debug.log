@@ -1,0 +1,25 @@
+[debug] [2020-12-15T11:27:50.298Z] ----------------------------------------------------------------------
+[debug] [2020-12-15T11:27:50.301Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kap70\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-12-15T11:27:50.302Z] CLI Version:   8.19.0
+[debug] [2020-12-15T11:27:50.302Z] Platform:      win32
+[debug] [2020-12-15T11:27:50.302Z] Node Version:  v12.18.0
+[debug] [2020-12-15T11:27:50.303Z] Time:          Tue Dec 15 2020 13:27:50 GMT+0200 (Israel Standard Time)
+[debug] [2020-12-15T11:27:50.303Z] ----------------------------------------------------------------------
+[debug] [2020-12-15T11:27:50.304Z] 
+[debug] [2020-12-15T11:27:50.311Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-15T11:27:50.312Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Git\noteApp\notesApp-vizo
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
