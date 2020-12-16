@@ -2,7 +2,6 @@
     <div class="container-wrapper">
         <div *ngIf="notes ||noNotesFound" class="container">
            <div *ngFor="let note of notes">
-                <p>author's UID: {{note.owner}}</p>
                 <h2>Title: {{note.title}} </h2>
                 <br>
                 <p>About: {{ note.description }}</p>

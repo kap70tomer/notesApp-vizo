@@ -26,7 +26,7 @@ export class NotesService {
   };
  //Delete/ delete a singel record by its id
   async delete(id:string){
-   return this.db.collection('/Notes').doc(id).delete();
+   return this.db.doc<Note>('Note/'+id).delete();
   };
  //PUT/ send new data on existing record to merge with or replace ex. 
   async updateNote(note:Note){

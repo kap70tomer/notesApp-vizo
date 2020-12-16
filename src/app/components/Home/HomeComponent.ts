@@ -28,14 +28,14 @@ export class HomeComponent implements OnInit {
   //After the component is loaded and ready use the component life cycle metahod to fecth the desired data,
   //cache it local on the component to diaplay on view. 
    ngOnInit(): void {
-   let ob = this.notesService.getAllNotes();
+   let ob = this.notesService.getMyNotes();
    //Using 'Promise' to retrive response from server with an object,
    // wich can resolve or reject (could be positive or negative resolve or an error). 
    ob.then(res =>{
      let myNotes = res
      myNotes.subscribe(noteList=>{
-        this.notes = noteList;
-        console.log(this.notes)
+        // this.notes = noteList;
+        console.log(noteList)
       },
       err=>console.error(err))
     });

@@ -1,7 +1,7 @@
 <section>
 <aside>
         <div> 
-            <span class="btn btn-danger" (click)="initForm()"></span><br><br>
+            <span class="btn btn-danger" (click)="initForm()">clear</span><br><br>
             <form #updateForm="ngForm">                
                 <label for="title">Title</label>
                 <input type="text" placeholder="'title'" value="{{currentNote.title}}"
@@ -21,14 +21,13 @@
 
     <main> 
        <div class="container">
-
-        <div class="noteContainer" *ngFor="let note of notes"
-        (click)="loadClickedNoteInfo(note)">
-        <div class="note-title"><span><mat-icon (click)="onDeleteClicked(note)">close</mat-icon></span>
-            <h6 class="text-capitalize">{{ note.title }}</h6>
-            <p>{{ note.owner}}</p>
-            <strong class="description">{{ note.description }} </strong>
-        </div>
+           <div class="noteContainer card" *ngFor="let note of notes"
+           (click)="loadClickedNoteInfo(note)">
+           <div class="card-title">
+               <h2 class="text-capitalize">{{ note.title }}</h2><span (click)="onDeleteClicked(note)"><mat-icon >close</mat-icon></span>
+                <strong class="description">{{ note.description }} </strong>
+            </div>
+            <p>onwer id:{{ note.owner }}</p>
         </div>
        </div> 
     </main>

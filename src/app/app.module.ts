@@ -17,6 +17,7 @@ import { NoteComponent } from './components/Note/note.component';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { environment } from 'src/environments/environment';
     ReactiveFormsModule,
     RouterModule,
     RoutingModule,
+    NgbModule,
   ],
   providers: [FirebaseService],
   bootstrap: [LayoutComponent]  
