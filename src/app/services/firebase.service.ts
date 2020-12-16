@@ -25,9 +25,13 @@ export class FirebaseService {
   public async signInWithEmailPassword(email: string, password: string){
     await this.firebaseAuth.signInWithEmailAndPassword(email, password)
     .then(res => {
-      this.isLoggedIn = true;
-      sessionStorage.setItem('user',JSON.stringify(res.user?.uid));
-      alert('Welcome Back my Master! '+ res.user?.displayName||"");// Greetings
+      if(res.user){
+
+        this.isLoggedIn = true;
+        sessionStorage.setItem('user',res.user?.uid);
+        alert('Welcome Back my Master! '+ res.user?.displayName||"");// Greetings
+      }
+      return this.isLoggedIn = false
     })
     .catch(err => console.error(err));
   };

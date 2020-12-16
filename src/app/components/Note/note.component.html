@@ -1,6 +1,7 @@
-<div class="note" (dblclick)="edit.emit(note)">
-    <h2> {{note.title}} </h2>
+<div class="note container" (dblclick)="edit.emit(note)">
+    <p>author's UID: {{note.owner}}</p>
+    <h2>Title: {{note.title}} </h2>
     <br>
-    <p>{{ note.description }}</p>
+    <p>About: {{ note.description }}</p>
     <mat-icon (click)="onDeleteClicked()">delete</mat-icon>
 </div>

@@ -18,7 +18,7 @@ export class NotesService {
   };
   //GET/ get all records of notes from db.
   async getAllNotes(){
-    return this.db.collection('/Notes').snapshotChanges()
+    return this.db.collection('/Notes').valueChanges()
   };
   //GET/ retrive logged in users notes.
   async getMyNotes(){

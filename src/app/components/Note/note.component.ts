@@ -9,11 +9,17 @@ import { NotesService } from '../../services/notes.service';
 })
 export class NoteComponent implements OnInit {
 
-  @Input()
-  note!: Note; // undifined as "initial".
+  @Input() note: Note; // undifined as "initial".
   @Output() edit = new EventEmitter();
   
-  constructor(public noteServices: NotesService) { }
+  constructor(public noteServices: NotesService) { 
+    this.note = {
+      id:"",
+      owner:"",
+      description:"",
+      title:""
+    }
+  }
 
   ngOnInit(): void {
   }
