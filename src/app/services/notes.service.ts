@@ -30,7 +30,7 @@ export class NotesService {
   };
  //PUT/ send new data on existing record to merge with or replace ex. 
   async updateNote(note:Note){
-    return this.db.collection('/Notes').doc(note.id).set(note,{merge:true});
+    return this.db.collection('/Notes').doc(note.id).set(note,{merge:false}); 
   };
   //Delete All Records
   async deleteAllNotes(){

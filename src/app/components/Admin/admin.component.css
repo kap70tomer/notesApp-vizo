@@ -17,15 +17,23 @@ aside{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
 }
 #saveBtn{    
-    margin: 2%;
-    width: 90%;
+    margin: 1%;
+    width: 50%;
     color: white;
-    background-color: rgb(245, 166, 21);
+    background-color: rgb(200, 67, 226);
 }
 
-#Container{
+#saveBtn:hover{
+    background-color: greenyellow;
+    border: grey;
+    transform: scale(1.1); 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.container{
     overflow: auto;
     height: 60rem;
+    background-color: rgb(247, 246, 247);
 }
 
 .card{
@@ -36,8 +44,7 @@ aside{
     text-align: center;
     font-family: arial;
     margin: 2%;
-    
-     transition: all .2s ease-in-out; 
+    transition: all .2s ease-in-out; 
 }
 
 .card:hover{

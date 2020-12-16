@@ -46,6 +46,11 @@ export class AdminComponent implements OnInit {
       console.log(res);
     });
   };
+  async createNote(){
+    return this.notesService.createNote(this.currentNote).then(res=>{
+      console.log(res);
+    })
+  }
   // initialize func for forms fields
   public initForm() {
     this.currentNote = {

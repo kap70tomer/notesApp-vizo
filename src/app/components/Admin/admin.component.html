@@ -13,7 +13,8 @@
                 [(ngModel)]="currentNote.description" name="description">
                 </textarea>
                 <br>   
-                <button id="saveBtn" [disabled]="updateForm.untouched && !updateForm.dirty" (click)="updateNote(currentNote)">Update<span class="glyphicon glyphicon-save-file"></span></button>
+                <button id="saveBtn" [disabled]="updateForm.untouched && !updateForm.dirty" (click)="updateNote(currentNote)">Update</button>
+                <button id="saveBtn" [disabled]="updateForm.untouched && !updateForm.dirty" (click)="createNote()">Add Note</button>
             </form>
         </div>
     </aside>
