@@ -1,1 +1,34 @@
-<p>admin works!</p>
+<section>
+<aside>
+        <div> 
+            <span class="btn btn-danger" (click)="initForm()"></span><br><br>
+            <form #updateForm="ngForm">                
+                <label for="title">Title</label>
+                <input type="text" placeholder="'title'" value="{{currentNote.title}}"
+                [(ngModel)]="currentNote.title" name="title">
+                <br>
+                <br>
+                <label for="description">Description</label>
+                <textarea min="3" placeholder="describe with words or picture" value="{{currentNote.description}}"
+                [(ngModel)]="currentNote.description" name="description">
+                </textarea>
+                <br>   
+                <button id="saveBtn" [disabled]="updateForm.untouched && !updateForm.dirty" (click)="updateNote(currentNote)">Update<span class="glyphicon glyphicon-save-file"></span></button>
+            </form>
+        </div>
+    </aside>
+
+    <main> 
+       <div class="container">
+
+        <div class="noteContainer" *ngFor="let note of notes"
+        (click)="loadClickedNoteInfo(note)">
+        <div class="note-title"><span><mat-icon (click)="onDeleteClicked(note)">close</mat-icon></span>
+            <h6 class="text-capitalize">{{ note.title }}</h6>
+            <p>{{ note.owner}}</p>
+            <strong class="description">{{ note.description }} </strong>
+        </div>
+        </div>
+       </div> 
+    </main>
+</section>

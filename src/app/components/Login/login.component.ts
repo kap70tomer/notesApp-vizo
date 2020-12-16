@@ -44,8 +44,7 @@ export class LoginComponent implements OnInit {
   //send values taken from ui inputs to fb service for http request handling. 
     await this.firebaseService.signInWithEmailPassword(this.email.value, this.password.value)
     .then(res =>{
-      console.log(res);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/admin']);
     })
     .catch(err => console.error(err)
     );

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Note } from 'src/app/models/Note';
 import { NotesService } from 'src/app/services/notes.service';
 
 
@@ -12,12 +13,18 @@ export class HomeComponent implements OnInit {
   
   //Array data model to maintain the recived notes.
   public notes: any[];
+  private currentNote: Note;
   
-  constructor(public notesService:NotesService) {
+  constructor(public notesService: NotesService ) {
    //Initilaize of components data model, whene injections are done and constractor is called.
     this.notes = [];
-  }
-  
+    this.currentNote = {  
+    id:"",
+    owner:"",
+    description:"",
+    title:""
+    };
+  };
   //After the component is loaded and ready use the component life cycle metahod to fecth the desired data,
   //cache it local on the component to diaplay on view. 
    ngOnInit(): void {
@@ -33,5 +40,12 @@ export class HomeComponent implements OnInit {
       err=>console.error(err))
     });
   };
+  async onDeleteClicked(clickedNote:Note){
+    return this.notesService.delete(clickedNote.id);
+  }
+
+  async onUpdateClicked(clickedNote: Note){
+    return this.notesService.updateNote(clickedNote);
+  }
 };
 
